@@ -3,8 +3,8 @@ const wheather = require('./utils/wheather');
 const express = require('express');
 const path = require('path');
 const hbs = require('hbs')
+require('dotenv').config()
 
-// const address = process.argv[2]
 
 const app = express();
 const partialsPath = path.join(__dirname,'./template/partials')

@@ -2,7 +2,7 @@ const request = require('request')
 
 const forcast = (lac, long, callback) => {
 
-    access_key = '5f79f0fe18218101b8553cfc05163166'
+    access_key = process.env.ACCESS_KEY
     const url = 'http://api.weatherstack.com/current?access_key=' + access_key + '&query=' + lac + ',' + long
 
     request({url, json: true }, (err, {body} ) => {
