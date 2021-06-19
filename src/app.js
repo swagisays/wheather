@@ -36,6 +36,7 @@ app.get('/weather', (req,res)=> {
         
         
     }else {
+        console.log(req.query.address)
         geocoding( req.query.address,(err,{location, long,lac} = {}) => {
             if (err) {
                 return res.send({

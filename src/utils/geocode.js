@@ -2,11 +2,12 @@ const request = require('request')
 
 const geocoding = (addres, callback) => {
 
-    const apiKey = process.env.API_KEY
+    const apiKey = process.env.API_KEY    
 
     const url = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + encodeURIComponent(addres) + ".json?access_token=" + apiKey+"&limit=1"
 
     request({url, json: true }, (err, {body} = {}) => {
+        console.log('body',body)
 
         if (err) {
             callback('unable to connect with wheather server.\n please check your internet connection.');
