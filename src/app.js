@@ -1,9 +1,11 @@
+require('dotenv').config()
 const geocoding = require('./utils/geocode');
 const wheather = require('./utils/wheather');
 const express = require('express');
 const path = require('path');
 const hbs = require('hbs')
-require('dotenv').config()
+const port = process.env.PORT || 3000
+
 
 
 const app = express();
@@ -67,7 +69,7 @@ app.get('*', (req,res) => {
     })
 })
 
-app.listen('3000', (err) => {
+app.listen(port, (err) => {
     if(err) {
         return console.log(err);
     }
