@@ -10,7 +10,7 @@ form.addEventListener('submit', (e)=>{
     msg1.textContent = 'Loading...'
     msg2.textContent = ''
 
-    fetch("http://localhost:3000/weather/?address="+address).then(res => {
+    fetch("https://wheatherawesome.herokuapp.com/weather/?address="+address).then(res => {
         res.json().then(data => {
             if (data.err){
                 msg1.textContent = data.err
